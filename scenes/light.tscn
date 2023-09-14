@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=3 uid="uid://bimkym7opevqq"]
+
+[ext_resource type="Material" uid="uid://wo5vfhkaldrl" path="res://material/light.tres" id="1_r45s1"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yx1xf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0x8x2"]
+albedo_color = Color(0.494118, 0, 0.203922, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0vuxf"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ypp05"]
+
+[node name="light" type="Node3D"]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.0857542, 0, 0, 0, -1.23233e-08, -0.1, 0, 0.281924, -4.37114e-09, 0, 0, 0.0687256)
+mesh = SubResource("CylinderMesh_yx1xf")
+material = ExtResource("1_r45s1")
+
+[node name="CSGMesh3D6" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.04, 0, 0, 0, 0.0153742, 0, 0, 0, 0.04, 0, 0.0687866, -0.00109863)
+mesh = SubResource("CylinderMesh_yx1xf")
+material = SubResource("StandardMaterial3D_0x8x2")
+
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.0548083, 0, 0, 0, 0.0830643, 0, 0, 0, 0.189238, 0, 0.0372009, -0.0638428)
+mesh = SubResource("BoxMesh_0vuxf")
+material = ExtResource("1_r45s1")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, -2.19253e-09, -0.2, 0, 0.0501593, -8.74228e-09, 0, 0, -0.173007)
+mesh = SubResource("CylinderMesh_yx1xf")
+material = ExtResource("1_r45s1")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, -9.16973e-09, -0.2, 0, 0.209779, -8.74228e-09, 0, 0, -0.121875)
+mesh = SubResource("SphereMesh_ypp05")
+material = ExtResource("1_r45s1")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.15, 0, 0, 0, -2.18557e-09, -0.15, 0, 0.05, -6.55671e-09, 0, 0, -0.0740693)
+mesh = SubResource("CylinderMesh_yx1xf")
+material = ExtResource("1_r45s1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0869904, 0.000155412)
+light_color = Color(0.698039, 0.698039, 0.698039, 1)
+light_energy = 0.01
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0594682, 0.14408, -0.143163)
+light_color = Color(0.498039, 0.498039, 0.498039, 1)
+light_energy = 0.01
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.24585)
+light_color = Color(1, 0.996078, 0.894118, 1)
+light_energy = 0.695
+light_volumetric_fog_energy = 7.4
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 4.0
+distance_fade_length = 1.0
+spot_range = 7.67034
+spot_angle = 29.4821
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.245674)
+light_color = Color(1, 1, 0.905882, 1)
+light_energy = 4.962
+light_volumetric_fog_energy = 2.676
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 4.0
+distance_fade_length = 1.0
+spot_range = 9.5596
+spot_angle = 24.6729
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.245674)
+light_color = Color(1, 1, 0.905882, 1)
+light_energy = 4.962
+light_volumetric_fog_energy = 2.676
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 4.0
+distance_fade_length = 1.0
+spot_range = 10.827
+spot_angle = 16.3514

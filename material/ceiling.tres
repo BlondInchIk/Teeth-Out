@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://vye2u4llp6x2"]
+
+[ext_resource type="Texture2D" uid="uid://qpulu03mbd8o" path="res://assets/Новая папка (5)/pattern_55/diffus.tga" id="1_h1hh7"]
+[ext_resource type="Texture2D" uid="uid://c4neh7cfqpbo5" path="res://assets/Новая папка (5)/pattern_55/normal.tga" id="2_xo6md"]
+
+[resource]
+albedo_color = Color(0.564706, 0.564706, 0.564706, 1)
+albedo_texture = ExtResource("1_h1hh7")
+normal_enabled = true
+normal_texture = ExtResource("2_xo6md")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+uv1_world_triplanar = true

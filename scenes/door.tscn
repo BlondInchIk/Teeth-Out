@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://rcgcbtfpyp37"]
+
+[ext_resource type="Material" uid="uid://bx0tkhag73gsp" path="res://material/door.tres" id="1_m2b2k"]
+
+[node name="door" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+visible = false
+size = Vector3(1.5, 2.5, 0.4)
+material = ExtResource("1_m2b2k")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1.24276, 0, 0, 0, 0.100867, 0, 0, 0, 1.37163, 0, 2.57793, 0)
+use_collision = true
+size = Vector3(1.5, 2.5, 0.4)
+material = ExtResource("1_m2b2k")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(1.07885, 0, 0, 0, 0.100867, 0, 0, 0, 1.17399, 0, 2.72338, 0)
+use_collision = true
+size = Vector3(1.5, 2.5, 0.4)
+material = ExtResource("1_m2b2k")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.10045, 0, 0, 0, 1, 0, 0, 0, 1.1487, 0.8, 1.25, 0)
+use_collision = true
+size = Vector3(1.5, 2.5, 0.4)
+material = ExtResource("1_m2b2k")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.10045, 0, 0, 0, 1, 0, 0, 0, 1.1487, -0.8, 1.25, 0)
+use_collision = true
+size = Vector3(1.5, 2.5, 0.4)
+material = ExtResource("1_m2b2k")

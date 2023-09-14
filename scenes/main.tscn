@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://dxwqw8kfg4ogx"]
+
+[ext_resource type="Texture2D" uid="uid://dv4y1ky78k03q" path="res://assets/floor/pattern_271/diffuse.tga" id="1_sr613"]
+[ext_resource type="Texture2D" uid="uid://dv6knxdwu266o" path="res://assets/floor/pattern_270/specular.tga" id="2_ikxc4"]
+[ext_resource type="Texture2D" uid="uid://dpc7u3g3ja2fd" path="res://assets/floor/pattern_271/normal.tga" id="3_b7gql"]
+[ext_resource type="Texture2D" uid="uid://ds20dofforla2" path="res://assets/Новая папка (3)/pattern_206/T_206_d.tga" id="4_dkpsc"]
+[ext_resource type="Texture2D" uid="uid://t4p7jgdsjlpi" path="res://assets/Новая папка (3)/pattern_206/T_206_n.tga" id="5_6iuye"]
+[ext_resource type="PackedScene" uid="uid://528sx40tj28h" path="res://scenes/player.tscn" id="6_rqn1y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6bbr6"]
+albedo_texture = ExtResource("1_sr613")
+normal_enabled = true
+normal_texture = ExtResource("3_b7gql")
+backlight_texture = ExtResource("2_ikxc4")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ies5p"]
+albedo_color = Color(0.443137, 0.443137, 0.443137, 1)
+albedo_texture = ExtResource("4_dkpsc")
+normal_enabled = true
+normal_texture = ExtResource("5_6iuye")
+uv1_triplanar = true
+
+[node name="world" type="Node3D"]
+
+[node name="stage" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_6bbr6")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52243, 0)
+light_energy = 11.002
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.86048)
+use_collision = true
+size = Vector3(5, 5, 0.2)
+material = SubResource("StandardMaterial3D_ies5p")
+
+[node name="env" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="env"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+visible = false
+light_color = Color(0.996078, 1, 0.909804, 1)
+light_energy = 1.3
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="player" parent="Node3D" instance=ExtResource("6_rqn1y")]

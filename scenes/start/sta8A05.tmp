@@ -1,0 +1,155 @@
+[gd_scene load_steps=9 format=3 uid="uid://pebqa7ps6kcu"]
+
+[ext_resource type="Material" uid="uid://bx1fuv75ywfxs" path="res://material/floor_material.tres" id="1_c65ts"]
+[ext_resource type="Material" uid="uid://dhfybvlekef74" path="res://material/wall.tres" id="2_7g7pe"]
+[ext_resource type="PackedScene" uid="uid://528sx40tj28h" path="res://scenes/player.tscn" id="2_c2v7f"]
+[ext_resource type="Material" uid="uid://vye2u4llp6x2" path="res://material/ceiling.tres" id="3_j1enm"]
+[ext_resource type="PackedScene" uid="uid://rcgcbtfpyp37" path="res://scenes/door.tscn" id="5_v6mjk"]
+[ext_resource type="Script" path="res://scenes/start/VideoStreamPlayer.gd" id="6_40yha"]
+
+[sub_resource type="Environment" id="Environment_wafok"]
+background_energy_multiplier = 16.0
+glow_intensity = 4.25
+glow_bloom = 0.05
+fog_enabled = true
+fog_light_color = Color(0.00784314, 0.0156863, 0.0313726, 1)
+fog_light_energy = 0.1
+fog_density = 0.1783
+fog_sky_affect = 0.0
+fog_height = 0.5
+fog_height_density = 2.5347
+volumetric_fog_density = 0.0
+volumetric_fog_albedo = Color(0.0196078, 0.0901961, 0.0784314, 1)
+volumetric_fog_emission = Color(0.0352941, 0.0352941, 0.0352941, 1)
+volumetric_fog_emission_energy = 0.0
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_nyoqf"]
+file = "https://youtu.be/jbJp84jHei0"
+
+[node name="start" type="Node3D"]
+
+[node name="level" type="Node3D" parent="."]
+
+[node name="floor" type="Node3D" parent="level"]
+
+[node name="floor 7x7" type="CSGBox3D" parent="level/floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -0.114507)
+use_collision = true
+size = Vector3(7, 1, 7)
+material = ExtResource("1_c65ts")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="level/floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49914, -0.5, 13.3758)
+use_collision = true
+size = Vector3(4, 1, 20)
+material = ExtResource("1_c65ts")
+
+[node name="wall" type="Node3D" parent="level"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="level/wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 3.23555)
+use_collision = true
+size = Vector3(7, 3, 0.3)
+material = ExtResource("2_7g7pe")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="level/wall/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76678, -0.257212, -0.140104)
+operation = 2
+size = Vector3(1.5, 2.5, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="level/wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -3.46993)
+use_collision = true
+size = Vector3(7, 3, 0.3)
+material = ExtResource("2_7g7pe")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="level/wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49577, 4.49679, 3.23759)
+use_collision = true
+size = Vector3(4, 3, 0.3)
+material = ExtResource("2_7g7pe")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="level/wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.35015, 1.5, -0.12002)
+use_collision = true
+size = Vector3(7, 3, 0.3)
+material = ExtResource("2_7g7pe")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="level/wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.35, 3, 13.377)
+use_collision = true
+size = Vector3(20, 6, 0.3)
+material = ExtResource("2_7g7pe")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="level/wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.349, 3, 13.377)
+use_collision = true
+size = Vector3(20, 6, 0.3)
+material = ExtResource("2_7g7pe")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="level/wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50303, 3.00134, 23.229)
+use_collision = true
+size = Vector3(4, 6, 0.3)
+material = ExtResource("2_7g7pe")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="level/wall"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.34676, 1.5, -0.12002)
+use_collision = true
+size = Vector3(7, 3, 0.3)
+material = ExtResource("2_7g7pe")
+
+[node name="ceiling" type="Node3D" parent="level"]
+
+[node name="cell" type="CSGBox3D" parent="level/ceiling"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.102, -0.116273)
+size = Vector3(7, 0.2, 7)
+material = ExtResource("3_j1enm")
+
+[node name="cell2" type="CSGBox3D" parent="level/ceiling"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49396, 5.62953, 13.3126)
+size = Vector3(4, 0.2, 20)
+material = ExtResource("3_j1enm")
+
+[node name="env" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
+environment = SubResource("Environment_wafok")
+
+[node name="player" parent="." instance=ExtResource("2_c2v7f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0360423, 0, -0.0708504)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.00905819, 0.999959, 0, -0.999959, 0.00905819, 1.01483, 3.10008, 6.87446)
+light_energy = 0.0
+
+[node name="door" parent="." instance=ExtResource("5_v6mjk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76067, 0, 3.24422)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.24014, 2.01939, -1.9726)
+
+[node name="door2" parent="." instance=ExtResource("5_v6mjk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46747, 0.019829, 23.208)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 226.0
+offset_bottom = 139.0
+text = "Teeth Out pre-alpha 1.0
+
+WASD - move
+Ctrl - crouch
+Shift - run
+"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = 320.0
+offset_top = 71.0
+offset_right = 683.0
+offset_bottom = 421.0
+stream = SubResource("VideoStreamTheora_nyoqf")
+volume_db = 3.75
+autoplay = true
+script = ExtResource("6_40yha")

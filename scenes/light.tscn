@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bimkym7opevqq"]
+[gd_scene load_steps=7 format=3 uid="uid://bimkym7opevqq"]
 
 [ext_resource type="Material" uid="uid://wo5vfhkaldrl" path="res://material/light.tres" id="1_r45s1"]
+[ext_resource type="Script" path="res://scripts/light.gd" id="1_vfpfy"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_yx1xf"]
 
@@ -12,6 +13,7 @@ albedo_color = Color(0.494118, 0, 0.203922, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_ypp05"]
 
 [node name="light" type="Node3D"]
+script = ExtResource("1_vfpfy")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
 transform = Transform3D(0.0857542, 0, 0, 0, -1.23233e-08, -0.1, 0, 0.281924, -4.37114e-09, 0, 0, 0.0687256)
@@ -56,19 +58,19 @@ light_energy = 0.01
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.24585)
 light_color = Color(1, 0.996078, 0.894118, 1)
-light_energy = 0.695
+light_energy = 0.0
 light_volumetric_fog_energy = 7.4
 shadow_enabled = true
 distance_fade_enabled = true
 distance_fade_begin = 4.0
 distance_fade_length = 1.0
 spot_range = 7.67034
-spot_angle = 29.4821
+spot_angle = 37.9705
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.245674)
 light_color = Color(1, 1, 0.905882, 1)
-light_energy = 4.962
+light_energy = 0.0
 light_volumetric_fog_energy = 2.676
 shadow_enabled = true
 distance_fade_enabled = true
@@ -80,7 +82,7 @@ spot_angle = 24.6729
 [node name="SpotLight3D3" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.245674)
 light_color = Color(1, 1, 0.905882, 1)
-light_energy = 4.962
+light_energy = 0.0
 light_volumetric_fog_energy = 2.676
 shadow_enabled = true
 distance_fade_enabled = true

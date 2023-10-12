@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://do45lo2prnslv"]
+
+[ext_resource type="Script" path="res://scripts/cell2.gd" id="1_w7s4n"]
+[ext_resource type="Material" uid="uid://bx1fuv75ywfxs" path="res://material/floor_material.tres" id="2_sr4yh"]
+[ext_resource type="Material" uid="uid://dhfybvlekef74" path="res://material/wall.tres" id="3_nhhqn"]
+[ext_resource type="Material" uid="uid://vye2u4llp6x2" path="res://material/ceiling.tres" id="3_uj4uv"]
+
+[node name="cell2" type="Node3D"]
+script = ExtResource("1_w7s4n")
+
+[node name="floor" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(2, 0.01, 2)
+material = ExtResource("2_sr4yh")
+
+[node name="ceiling" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+use_collision = true
+size = Vector3(2, 0.01, 2)
+material = ExtResource("3_uj4uv")
+
+[node name="wall_up" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.95)
+use_collision = true
+size = Vector3(2, 4, 0.1)
+material = ExtResource("3_nhhqn")
+
+[node name="wall_down" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.95)
+use_collision = true
+size = Vector3(2, 4, 0.1)
+material = ExtResource("3_nhhqn")
+
+[node name="wall_left" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.95, 2, 0)
+use_collision = true
+size = Vector3(2, 4, 0.1)
+material = ExtResource("3_nhhqn")
+
+[node name="wall_right" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.95, 2, 0)
+use_collision = true
+size = Vector3(2, 4, 0.1)
+material = ExtResource("3_nhhqn")

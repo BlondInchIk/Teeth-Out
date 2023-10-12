@@ -1,0 +1,906 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpu6gxoo6ewxw"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_d0aa6"]
+[ext_resource type="MeshLibrary" uid="uid://dj2ptju05m3yp" path="res://scenes/main/tiles.tres" id="2_uwruy"]
+[ext_resource type="Script" path="res://scripts/Mesh.gd" id="3_08ipi"]
+[ext_resource type="Script" path="res://scripts/cell2.gd" id="4_yhris"]
+[ext_resource type="Environment" uid="uid://dd6d41ock61cl" path="res://scenes/start/new_environment.tres" id="6_3xj1n"]
+[ext_resource type="PackedScene" uid="uid://vuk024aw5a7i" path="res://scenes/anim_evil.tscn" id="6_d5r6e"]
+
+[node name="Main" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2974, -8.66306, 1.85025)
+script = ExtResource("1_d0aa6")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("6_3xj1n")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+
+[node name="Mesh" type="Node3D" parent="NavigationRegion3D"]
+script = ExtResource("3_08ipi")
+grid_map_path = NodePath("../../GridMap")
+
+[node name="DunCell" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 12.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681948" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 12.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681949" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 12.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681950" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 12.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681951" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 14.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681952" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 14.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681953" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 14.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681954" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 14.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681955" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 16.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681956" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 16.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681957" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 16.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681958" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 16.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681959" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 18.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681960" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 18.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681961" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 18.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681962" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 18.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681963" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 20.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681964" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 20.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681965" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 20.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681966" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 20.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681967" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 26.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681968" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 26.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681969" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, 26.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681970" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 26.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681971" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 26.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681972" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 28.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681973" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 28.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681974" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, 28.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681975" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 28.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681976" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 28.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681977" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 30.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681978" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 30.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681979" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, 30.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681980" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 30.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681981" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 30.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681982" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 32.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681983" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 32.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681984" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, 32.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681985" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 32.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681986" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 32.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681987" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.5, 0, 24.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681988" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5, 0, 24.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681989" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5, 0, 24.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681990" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5, 0, 24.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681991" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.5, 0, 26.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681992" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5, 0, 26.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681993" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5, 0, 26.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681994" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5, 0, 26.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681995" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.5, 0, 28.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681996" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5, 0, 28.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681997" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5, 0, 28.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681998" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5, 0, 28.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@681999" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.5, 0, 30.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682000" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5, 0, 30.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682001" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5, 0, 30.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682002" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5, 0, 30.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682003" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 0.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682004" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 0.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682005" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 0, 0.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682006" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 0.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682007" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 2.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682008" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 2.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682009" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 0, 2.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682010" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 2.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682011" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 4.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682012" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 4.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682013" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 0, 4.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682014" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 4.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682015" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 6.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682016" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 6.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682017" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 0, 6.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682018" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 6.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682019" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 8.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682020" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 8.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682021" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 0, 8.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682022" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 8.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682023" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 26.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682024" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 0, 26.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682025" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5, 0, 26.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682026" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, 0, 26.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682027" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 28.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682028" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 0, 28.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682029" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5, 0, 28.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682030" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 30.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682031" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 0, 30.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682032" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5, 0, 30.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682033" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, 0, 30.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682034" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 32.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682035" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 0, 32.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682036" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5, 0, 32.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682037" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, 0, 32.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682038" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 34.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682039" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 0, 34.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682040" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5, 0, 34.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682041" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, 0, 34.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682042" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 0, 10.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682043" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.5, 0, 10.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682044" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5, 0, 10.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682045" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5, 0, 10.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682046" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5, 0, 10.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682047" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 0, 12.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682048" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.5, 0, 12.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682049" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5, 0, 12.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682050" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5, 0, 12.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682051" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5, 0, 12.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682052" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 0, 14.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682053" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.5, 0, 14.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682054" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5, 0, 14.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682055" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5, 0, 14.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682056" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5, 0, 14.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682057" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 0, 16.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682058" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.5, 0, 16.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682059" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5, 0, 16.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682060" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5, 0, 16.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682061" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5, 0, 16.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682062" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 0, 18.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682063" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.5, 0, 18.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682064" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5, 0, 18.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682065" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5, 0, 18.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682066" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5, 0, 18.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682067" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 0, 14.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682068" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 14.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682069" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 0, 14.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682070" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5, 0, 14.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682071" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 0, 16.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682072" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 16.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682073" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 0, 16.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682074" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5, 0, 16.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682075" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 0, 18.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682076" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 18.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682077" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 0, 18.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682078" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5, 0, 18.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682079" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 0, 20.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682080" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 20.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682081" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 0, 20.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682082" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5, 0, 20.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682083" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 30.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682084" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 30.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682085" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 30.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682086" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 30.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682087" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 32.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682088" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 32.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682089" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 32.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682090" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 32.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682091" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 34.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682092" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 34.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682093" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 34.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682094" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 34.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682095" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 36.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682096" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 36.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682097" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 36.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682098" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 36.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682099" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682100" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682101" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 0.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682102" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 0.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682103" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682104" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682105" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 2.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682106" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 2.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682107" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 2.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682108" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 2.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682109" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 4.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682110" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 4.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682111" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 4.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682112" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 4.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682113" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 4.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682114" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 6.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682115" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 6.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682116" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 6.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682117" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 6.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682118" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 6.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682119" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 0, 30.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682120" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 0, 28.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682121" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5, 0, 22.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682122" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5, 0, 20.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682123" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.5, 0, 20.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682124" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, 0, 18.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682125" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, 0, 16.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682126" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, 0, 14.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682127" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 22.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682128" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 24.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682129" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 24.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682130" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, 18.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682131" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, 16.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682132" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 16.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682133" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 16.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682134" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 10.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682135" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 8.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682136" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 8.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682137" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 8.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682138" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 10.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682139" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 12.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682140" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 0, 12.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682141" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, 4.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682142" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 4.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682143" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 0, 8.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682144" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5, 0, 8.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682145" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5, 0, 8.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682146" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 0, 8.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682147" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 28.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682148" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 26.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682149" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 24.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682150" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 22.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682151" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 22.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682152" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 20.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682153" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 18.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682154" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 16.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682155" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 14.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682156" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 12.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682157" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 10.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682158" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 8.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682159" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 0, 30.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682160" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 32.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682161" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 30.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682162" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 0, 24.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682163" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 0, 22.5)
+script = ExtResource("4_yhris")
+
+[node name="@Node3D@682164" type="Node3D" parent="NavigationRegion3D/Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5, 0, 22.5)
+script = ExtResource("4_yhris")
+
+[node name="GridMap" type="GridMap" parent="."]
+visible = false
+mesh_library = ExtResource("2_uwruy")
+cell_size = Vector3(1, 1, 1)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(65535, 65535, 3, 65535, 20, 3, 20, 65535, 3, 0, 65535, 3, 0, 20, 3, 20, 0, 3, 65535, 0, 3, 1, 65535, 3, 1, 20, 3, 20, 1, 3, 65535, 1, 3, 2, 65535, 3, 2, 20, 3, 20, 2, 3, 65535, 2, 3, 3, 65535, 3, 3, 20, 3, 20, 3, 3, 65535, 3, 3, 4, 65535, 3, 4, 20, 3, 20, 4, 3, 65535, 4, 3, 5, 65535, 3, 5, 20, 3, 20, 5, 3, 65535, 5, 3, 6, 65535, 3, 6, 20, 3, 20, 6, 3, 65535, 6, 3, 7, 65535, 3, 7, 20, 3, 20, 7, 3, 65535, 7, 3, 8, 65535, 3, 8, 20, 3, 20, 8, 3, 65535, 8, 3, 9, 65535, 3, 9, 20, 3, 20, 9, 3, 65535, 9, 3, 10, 65535, 3, 10, 20, 3, 20, 10, 3, 65535, 10, 3, 11, 65535, 3, 11, 20, 3, 20, 11, 3, 65535, 11, 3, 12, 65535, 3, 12, 20, 3, 20, 12, 3, 65535, 12, 3, 13, 65535, 3, 13, 20, 3, 20, 13, 3, 65535, 13, 3, 14, 65535, 3, 14, 20, 3, 20, 14, 3, 65535, 14, 3, 15, 65535, 3, 15, 20, 3, 20, 15, 3, 65535, 15, 3, 16, 65535, 3, 16, 20, 3, 20, 16, 3, 65535, 16, 3, 17, 65535, 3, 17, 20, 3, 20, 17, 3, 65535, 17, 3, 18, 65535, 3, 18, 20, 3, 20, 18, 3, 65535, 18, 3, 19, 65535, 3, 19, 20, 3, 20, 19, 3, 65535, 19, 3, 20, 20, 3, 3, 6, 2, 4, 6, 0, 5, 6, 0, 6, 6, 0, 3, 7, 0, 4, 7, 0, 5, 7, 0, 6, 7, 0, 3, 8, 0, 4, 8, 0, 5, 8, 0, 6, 8, 0, 3, 9, 0, 4, 9, 0, 5, 9, 0, 6, 9, 2, 3, 10, 0, 4, 10, 0, 5, 10, 0, 6, 10, 2, 5, 13, 2, 6, 13, 0, 7, 13, 0, 8, 13, 0, 9, 13, 0, 5, 14, 0, 6, 14, 0, 7, 14, 0, 8, 14, 0, 9, 14, 0, 5, 15, 0, 6, 15, 0, 7, 15, 0, 8, 15, 0, 9, 15, 2, 5, 16, 2, 6, 16, 0, 7, 16, 0, 8, 16, 0, 9, 16, 0, 16, 12, 0, 17, 12, 2, 18, 12, 0, 19, 12, 0, 16, 13, 0, 17, 13, 0, 18, 13, 0, 19, 13, 0, 16, 14, 0, 17, 14, 0, 18, 14, 0, 19, 14, 0, 16, 15, 2, 17, 15, 0, 18, 15, 0, 19, 15, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 8, 2, 2, 9, 2, 0, 10, 2, 0, 11, 2, 0, 8, 3, 0, 9, 3, 0, 10, 3, 0, 11, 3, 0, 8, 4, 0, 9, 4, 0, 10, 4, 0, 11, 4, 2, 11, 13, 0, 12, 13, 2, 13, 13, 0, 14, 13, 0, 11, 14, 0, 12, 14, 0, 13, 14, 0, 11, 15, 2, 12, 15, 0, 13, 15, 0, 14, 15, 0, 11, 16, 0, 12, 16, 0, 13, 16, 0, 14, 16, 0, 11, 17, 0, 12, 17, 0, 13, 17, 0, 14, 17, 0, 15, 5, 2, 16, 5, 0, 17, 5, 0, 18, 5, 0, 19, 5, 0, 15, 6, 0, 16, 6, 0, 17, 6, 0, 18, 6, 0, 19, 6, 0, 15, 7, 0, 16, 7, 0, 17, 7, 0, 18, 7, 0, 19, 7, 0, 15, 8, 0, 16, 8, 0, 17, 8, 0, 18, 8, 0, 19, 8, 0, 15, 9, 2, 16, 9, 0, 17, 9, 0, 18, 9, 2, 19, 9, 0, 10, 7, 2, 11, 7, 0, 12, 7, 0, 13, 7, 2, 10, 8, 2, 11, 8, 0, 12, 8, 0, 13, 8, 0, 10, 9, 0, 11, 9, 0, 12, 9, 0, 13, 9, 0, 10, 10, 0, 11, 10, 0, 12, 10, 0, 13, 10, 2, 0, 15, 0, 1, 15, 0, 2, 15, 0, 3, 15, 2, 0, 16, 0, 1, 16, 0, 2, 16, 0, 3, 16, 0, 0, 17, 0, 1, 17, 0, 2, 17, 0, 3, 17, 0, 0, 18, 0, 1, 18, 0, 2, 18, 0, 3, 18, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 2, 1, 3, 0, 2, 3, 2, 3, 3, 0, 4, 3, 0, 5, 3, 2, 15, 15, 1, 15, 14, 1, 17, 11, 1, 17, 10, 1, 18, 10, 1, 14, 9, 1, 14, 8, 1, 14, 7, 1, 6, 11, 1, 6, 12, 1, 5, 12, 1, 7, 9, 1, 7, 8, 1, 8, 8, 1, 9, 8, 1, 3, 5, 1, 3, 4, 1, 4, 4, 1, 5, 4, 1, 11, 5, 1, 11, 6, 1, 10, 6, 1, 7, 2, 1, 6, 2, 1, 12, 4, 1, 13, 4, 1, 14, 4, 1, 15, 4, 1, 3, 14, 1, 3, 13, 1, 3, 12, 1, 3, 11, 1, 2, 11, 1, 2, 10, 1, 2, 9, 1, 2, 8, 1, 2, 7, 1, 2, 6, 1, 2, 5, 1, 2, 4, 1, 10, 15, 1, 4, 16, 1, 4, 15, 1, 12, 12, 1, 12, 11, 1, 13, 11, 1)
+}
+
+[node name="anim_evil" parent="." instance=ExtResource("6_d5r6e")]
+player_path = null
+metadata/_edit_pinned_properties_ = [&"player_path"]

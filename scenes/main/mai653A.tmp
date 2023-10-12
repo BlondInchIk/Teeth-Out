@@ -1,0 +1,902 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpu6gxoo6ewxw"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_d0aa6"]
+[ext_resource type="MeshLibrary" uid="uid://dj2ptju05m3yp" path="res://scenes/main/tiles.tres" id="2_uwruy"]
+[ext_resource type="Script" path="res://scripts/Mesh.gd" id="3_08ipi"]
+[ext_resource type="PackedScene" uid="uid://b3l03i6b3dbxl" path="res://scenes/main/cell.tscn" id="4_ljhbv"]
+[ext_resource type="Script" path="res://scripts/cell.gd" id="5_pddij"]
+
+[node name="Main" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0105415, -0.0097661, 0.0480919)
+script = ExtResource("1_d0aa6")
+room_number = 24
+min_room_size = 4
+max_room_size = 6
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("2_uwruy")
+cell_size = Vector3(1, 1, 1)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(65535, 65535, 3, 65535, 20, 3, 20, 65535, 3, 0, 65535, 3, 0, 20, 3, 20, 0, 3, 65535, 0, 3, 1, 65535, 3, 1, 20, 3, 20, 1, 3, 65535, 1, 3, 2, 65535, 3, 2, 20, 3, 20, 2, 3, 65535, 2, 3, 3, 65535, 3, 3, 20, 3, 20, 3, 3, 65535, 3, 3, 4, 65535, 3, 4, 20, 3, 20, 4, 3, 65535, 4, 3, 5, 65535, 3, 5, 20, 3, 20, 5, 3, 65535, 5, 3, 6, 65535, 3, 6, 20, 3, 20, 6, 3, 65535, 6, 3, 7, 65535, 3, 7, 20, 3, 20, 7, 3, 65535, 7, 3, 8, 65535, 3, 8, 20, 3, 20, 8, 3, 65535, 8, 3, 9, 65535, 3, 9, 20, 3, 20, 9, 3, 65535, 9, 3, 10, 65535, 3, 10, 20, 3, 20, 10, 3, 65535, 10, 3, 11, 65535, 3, 11, 20, 3, 20, 11, 3, 65535, 11, 3, 12, 65535, 3, 12, 20, 3, 20, 12, 3, 65535, 12, 3, 13, 65535, 3, 13, 20, 3, 20, 13, 3, 65535, 13, 3, 14, 65535, 3, 14, 20, 3, 20, 14, 3, 65535, 14, 3, 15, 65535, 3, 15, 20, 3, 20, 15, 3, 65535, 15, 3, 16, 65535, 3, 16, 20, 3, 20, 16, 3, 65535, 16, 3, 17, 65535, 3, 17, 20, 3, 20, 17, 3, 65535, 17, 3, 18, 65535, 3, 18, 20, 3, 20, 18, 3, 65535, 18, 3, 19, 65535, 3, 19, 20, 3, 20, 19, 3, 65535, 19, 3, 20, 20, 3, 3, 6, 2, 4, 6, 0, 5, 6, 0, 6, 6, 0, 3, 7, 0, 4, 7, 0, 5, 7, 0, 6, 7, 0, 3, 8, 0, 4, 8, 0, 5, 8, 0, 6, 8, 0, 3, 9, 0, 4, 9, 0, 5, 9, 0, 6, 9, 2, 3, 10, 0, 4, 10, 0, 5, 10, 0, 6, 10, 2, 5, 13, 2, 6, 13, 0, 7, 13, 0, 8, 13, 0, 9, 13, 0, 5, 14, 0, 6, 14, 0, 7, 14, 0, 8, 14, 0, 9, 14, 0, 5, 15, 0, 6, 15, 0, 7, 15, 0, 8, 15, 0, 9, 15, 2, 5, 16, 2, 6, 16, 0, 7, 16, 0, 8, 16, 0, 9, 16, 0, 16, 12, 0, 17, 12, 2, 18, 12, 0, 19, 12, 0, 16, 13, 0, 17, 13, 0, 18, 13, 0, 19, 13, 0, 16, 14, 0, 17, 14, 0, 18, 14, 0, 19, 14, 0, 16, 15, 2, 17, 15, 0, 18, 15, 0, 19, 15, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 8, 2, 2, 9, 2, 0, 10, 2, 0, 11, 2, 0, 8, 3, 0, 9, 3, 0, 10, 3, 0, 11, 3, 0, 8, 4, 0, 9, 4, 0, 10, 4, 0, 11, 4, 2, 11, 13, 0, 12, 13, 2, 13, 13, 0, 14, 13, 0, 11, 14, 0, 12, 14, 0, 13, 14, 0, 14, 14, 2, 11, 15, 2, 12, 15, 0, 13, 15, 0, 14, 15, 0, 11, 16, 0, 12, 16, 0, 13, 16, 0, 14, 16, 0, 11, 17, 0, 12, 17, 0, 13, 17, 0, 14, 17, 0, 15, 5, 2, 16, 5, 0, 17, 5, 0, 18, 5, 0, 19, 5, 0, 15, 6, 0, 16, 6, 0, 17, 6, 0, 18, 6, 0, 19, 6, 0, 15, 7, 0, 16, 7, 0, 17, 7, 0, 18, 7, 0, 19, 7, 0, 15, 8, 0, 16, 8, 0, 17, 8, 0, 18, 8, 0, 19, 8, 0, 15, 9, 2, 16, 9, 0, 17, 9, 0, 18, 9, 2, 19, 9, 0, 10, 7, 2, 11, 7, 0, 12, 7, 0, 13, 7, 2, 10, 8, 2, 11, 8, 0, 12, 8, 0, 13, 8, 0, 10, 9, 0, 11, 9, 0, 12, 9, 0, 13, 9, 0, 10, 10, 0, 11, 10, 0, 12, 10, 0, 13, 10, 2, 0, 15, 0, 1, 15, 0, 2, 15, 0, 3, 15, 2, 0, 16, 0, 1, 16, 0, 2, 16, 0, 3, 16, 0, 0, 17, 0, 1, 17, 0, 2, 17, 0, 3, 17, 0, 0, 18, 0, 1, 18, 0, 2, 18, 0, 3, 18, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 2, 1, 3, 0, 2, 3, 2, 3, 3, 0, 4, 3, 0, 5, 3, 2, 15, 15, 1, 15, 14, 1, 17, 11, 1, 17, 10, 1, 18, 10, 1, 14, 9, 1, 14, 8, 1, 14, 7, 1, 6, 11, 1, 6, 12, 1, 5, 12, 1, 7, 9, 1, 7, 8, 1, 8, 8, 1, 9, 8, 1, 3, 5, 1, 3, 4, 1, 4, 4, 1, 5, 4, 1, 11, 5, 1, 11, 6, 1, 10, 6, 1, 7, 2, 1, 6, 2, 1, 12, 4, 1, 13, 4, 1, 14, 4, 1, 15, 4, 1, 3, 14, 1, 3, 13, 1, 3, 12, 1, 3, 11, 1, 2, 11, 1, 2, 10, 1, 2, 9, 1, 2, 8, 1, 2, 7, 1, 2, 6, 1, 2, 5, 1, 2, 4, 1, 10, 15, 1, 4, 16, 1, 4, 15, 1, 12, 12, 1, 12, 11, 1, 13, 11, 1)
+}
+
+[node name="Mesh" type="Node3D" parent="."]
+script = ExtResource("3_08ipi")
+grid_map_path = NodePath("../GridMap")
+
+[node name="DunCell" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 6.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466409" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 6.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466410" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 6.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466411" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 6.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466412" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 7.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466413" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 7.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466414" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 7.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466415" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 7.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466416" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 8.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466417" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 8.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466418" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 8.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466419" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 8.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466420" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 9.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466421" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 9.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466422" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 9.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466423" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 9.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466424" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 10.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466425" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 10.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466426" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 10.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466427" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 10.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466428" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 13.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466429" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 13.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466430" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 13.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466431" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 13.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466432" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, 13.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466433" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 14.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466434" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 14.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466435" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 14.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466436" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 14.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466437" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, 14.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466438" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 15.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466439" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 15.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466440" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 15.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466441" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 15.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466442" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, 15.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466443" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 16.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466444" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 16.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466445" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 16.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466446" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 16.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466447" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, 16.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466448" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 12.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466449" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, 12.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466450" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 12.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466451" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 0, 12.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466452" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 13.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466453" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, 13.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466454" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 13.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466455" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 0, 13.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466456" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 14.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466457" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, 14.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466458" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 14.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466459" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 0, 14.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466460" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 15.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466461" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, 15.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466462" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 15.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466463" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 0, 15.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466464" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 0.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466465" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, 0.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466466" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466467" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, 0.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466468" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 1.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466469" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, 1.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466470" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 1.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466471" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, 1.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466472" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 2.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466473" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, 2.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466474" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 2.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466475" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, 2.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466476" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 3.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466477" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, 3.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466478" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 3.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466479" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, 3.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466480" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 4.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466481" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, 4.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466482" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 4.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466483" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, 4.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466484" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, 13.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466485" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 13.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466486" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 13.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466487" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, 13.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466488" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, 14.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466489" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 14.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466490" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 14.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466491" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, 14.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466492" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, 15.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466493" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 15.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466494" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 15.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466495" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, 15.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466496" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, 16.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466497" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 16.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466498" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 16.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466499" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, 16.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466500" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, 17.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466501" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 17.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466502" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 17.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466503" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, 17.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466504" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 0, 5.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466505" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 5.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466506" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, 5.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466507" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 5.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466508" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 0, 5.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466509" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 0, 6.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466510" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 6.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466511" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, 6.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466512" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 6.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466513" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 0, 6.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466514" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 0, 7.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466515" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 7.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466516" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, 7.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466517" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 7.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466518" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 0, 7.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466519" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 0, 8.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466520" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 8.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466521" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, 8.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466522" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 8.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466523" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 0, 8.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466524" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 0, 9.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466525" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 9.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466526" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, 9.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466527" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 9.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466528" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 0, 9.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466529" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 7.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466530" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, 7.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466531" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 7.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466532" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 7.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466533" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 8.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466534" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, 8.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466535" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 8.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466536" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 8.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466537" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 9.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466538" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, 9.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466539" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 9.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466540" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 9.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466541" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 10.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466542" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, 10.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466543" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 10.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466544" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 10.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466545" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 15.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466546" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 15.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466547" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 15.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466548" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 15.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466549" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 16.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466550" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 16.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466551" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 16.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466552" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 16.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466553" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 17.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466554" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 17.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466555" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 17.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466556" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 17.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466557" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 18.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466558" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 18.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466559" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 18.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466560" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 18.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466561" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466562" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466563" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466564" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466565" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466566" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466567" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 1.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466568" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 1.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466569" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 1.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466570" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 1.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466571" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 2.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466572" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466573" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 2.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466574" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 2.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466575" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 2.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466576" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 3.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466577" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 3.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466578" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 3.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466579" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 3.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466580" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 3.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466581" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 0, 15.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466582" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 0, 14.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466583" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, 11.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466584" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 0, 10.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466585" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 0, 10.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466586" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, 9.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466587" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, 8.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466588" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, 7.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466589" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 11.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466590" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 12.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466591" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 12.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466592" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 9.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466593" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 8.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466594" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, 8.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466595" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0, 8.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466596" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 5.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466597" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 4.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466598" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 4.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466599" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 4.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466600" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, 5.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466601" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0, 6.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466602" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 6.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466603" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 2.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466604" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 2.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466605" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 4.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466606" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 4.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466607" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 0, 4.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466608" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 0, 4.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466609" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 14.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466610" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 13.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466611" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 12.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466612" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 11.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466613" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 11.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466614" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 10.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466615" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 9.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466616" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 8.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466617" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 7.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466618" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 6.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466619" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 5.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466620" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 4.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466621" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 15.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466622" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 16.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466623" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 15.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466624" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 12.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466625" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0, 11.5)
+script = ExtResource("5_pddij")
+
+[node name="@Node3D@466626" type="Node3D" parent="Mesh" instance=ExtResource("4_ljhbv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 11.5)
+script = ExtResource("5_pddij")

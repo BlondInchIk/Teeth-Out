@@ -8,7 +8,7 @@ extends CharacterBody3D
 @onready var crouching_collusion_shape = $crouching_collusion_shape
 @onready var ray_cast_3d = $RayCast3D
 @onready var camera_3d = $nek/head/eyes/Camera3D
-@onready var color_rect = $ColorRect
+@onready var check_evil = $nek/head/eyes/Camera3D/check_evil
 
 #Speed vars
 var current_speed = 3.0
@@ -60,6 +60,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+
 #Move mouse
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -78,6 +79,7 @@ func _input(event):
 func _physics_process(delta):
 	
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
+	
 	
 	#Crouch
 	if Input.is_action_pressed("crouch") || sliding:

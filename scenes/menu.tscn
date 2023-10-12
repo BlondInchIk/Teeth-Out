@@ -13,7 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_3jmjc")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
-layout_mode = 0
+layout_mode = 2
 offset_left = 100.0
 offset_top = 100.0
 offset_right = 531.0
@@ -51,6 +51,34 @@ theme_override_fonts/font = ExtResource("1_14ng2")
 theme_override_font_sizes/font_size = 50
 text = "Exit
 "
+
+[node name="start" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="start"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Labels" type="VBoxContainer" parent="start/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="start/HBoxContainer/Labels"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="start/HBoxContainer/Labels"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="start/HBoxContainer/Labels"]
+layout_mode = 2
+
+[node name="settings" type="VBoxContainer" parent="start/HBoxContainer"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="start/HBoxContainer/settings"]
+layout_mode = 2
 
 [connection signal="pressed" from="VBoxContainer2/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer2/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

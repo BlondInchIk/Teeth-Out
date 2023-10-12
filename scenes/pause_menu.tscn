@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://be818qljgu4e"]
 
-[ext_resource type="Shader" path="res://blur.gdshader" id="1_6b74c"]
+[ext_resource type="Shader" path="res://scripts/blur.gdshader" id="1_if2wq"]
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="2_2g7cu"]
 [ext_resource type="FontFile" uid="uid://bcxq017m25wgk" path="res://RedHatDisplay-VariableFont_wght.ttf" id="3_1drrj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c7k6m"]
-shader = ExtResource("1_6b74c")
+shader = ExtResource("1_if2wq")
 shader_parameter/blur = 2.5
 shader_parameter/brightness = 1.0
 

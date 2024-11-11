@@ -1,12 +1,15 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bx1fuv75ywfxs"]
 
-[ext_resource type="Texture2D" uid="uid://dv4y1ky78k03q" path="res://assets/floor/pattern_271/diffuse.tga" id="1_d2wts"]
-[ext_resource type="Texture2D" uid="uid://dpc7u3g3ja2fd" path="res://assets/floor/pattern_271/normal.tga" id="2_8aj8p"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fns1m"]
+load_path = "res://.godot/imported/diffuse.tga-8fc4e1d39740f4e97c9e3ad832ae4d62.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xl4ra"]
+load_path = "res://.godot/imported/normal.tga-ae6351f968cf49f5b7ad494cbc0d0762.s3tc.ctex"
 
 [resource]
 albedo_color = Color(0.823529, 0.694118, 0.694118, 1)
-albedo_texture = ExtResource("1_d2wts")
+albedo_texture = SubResource("CompressedTexture2D_fns1m")
 normal_enabled = true
-normal_texture = ExtResource("2_8aj8p")
+normal_texture = SubResource("CompressedTexture2D_xl4ra")
 uv1_triplanar = true
 uv1_world_triplanar = true

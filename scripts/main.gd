@@ -1,10 +1,11 @@
-#@tool
 extends Node3D
+@onready var audio_stream_player = $AudioStreamPlayer
 
 func _ready():
 	generate()
 	await get_tree().create_timer(1).timeout
 	make_spawn(room_positions[0])
+	audio_stream_player.play()
 
 @onready var grid_map : GridMap = $GridMap
 
@@ -16,17 +17,18 @@ func set_start(val:bool)->void:
 		generate()
 
 @export_range(0,1) var survival_chance : float = 0.25
-@export var border_size : int = 40 : set = set_border_size
+@export var border_size : int = 30 : set = set_border_size
 func set_border_size(val : int)->void:
 	border_size = val
 	if Engine.is_editor_hint():
 		visualize_border()
-
+		
+@export var tooth_number : int = 8
 @export var room_number : int = 30
 @export var room_margin : int = 1
 @export var room_recursion : int = 15
-@export var min_room_size : int = 4 
-@export var max_room_size : int = 10
+@export var min_room_size : int = 2 
+@export var max_room_size : int = 3
 @export_multiline var custom_seed : String = "" : set = set_seed 
 func set_seed(val:String)->void:
 	custom_seed = val
@@ -44,6 +46,7 @@ func visualize_border():
 		grid_map.set_cell_item( Vector3i(-1,0,i),3)
 
 func generate():
+	my_global.max_teeth = int(tooth_number)
 	room_tiles.clear()
 	room_positions.clear()
 	var t : int = 0
@@ -185,10 +188,30 @@ func make_spawn(pos):
 	player.position = Vector3(pos) + Vector3(pos) + Vector3(0.5,1,0.5)
 	add_child(player)
 	player.set_owner(owner)
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(0).timeout
+	
+	var ran = []
+	var cur = 0
+	while len(ran) != tooth_number:
+		cur = randi() % len(room_positions)
+		if cur in ran or cur == 0:
+			continue
+		else:
+			ran.append(cur)
+	
+	for i in range(len(ran)):
+		var tooth_scene : PackedScene = preload("res://scenes/tooth.tscn")
+		var tooth : Node3D = tooth_scene.instantiate()
+		var tpos = randi_range(0, border_size)
+		tooth.position = room_positions[ran[i]] * 2
+		add_child(tooth)
+		tooth.set_owner(owner)
+	
+	await get_tree().create_timer(10).timeout
 	
 	var anim_evil_scene : PackedScene = preload("res://scenes/anim_evil.tscn")
 	var anim_evil : Node3D = anim_evil_scene.instantiate()
 	anim_evil.position = Vector3(pos) + Vector3(pos) + Vector3(0.5,0,0.5)
 	add_child(anim_evil)
 	anim_evil.set_owner(owner)
+

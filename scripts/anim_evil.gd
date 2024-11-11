@@ -4,7 +4,7 @@ var player = null
 var state_machine
 
 const SPEED = 4.0
-const ATTACK_RANGE = 2.5
+const ATTACK_RANGE = 1.5
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -12,7 +12,16 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var anim_tree = $AnimationTree
+@onready var audio_stream_player_3d = $AudioStreamPlayer3D
 
+func shag():
+	audio_stream_player_3d.pitch_scale = randf_range(0.8,1.2)
+	audio_stream_player_3d.volume_db = randf_range(-20,-15)
+	audio_stream_player_3d.play()
+
+func attack_eff():
+	player = get_node(player_path)
+	player.attack_eff()
 
 func _ready():
 	#player = get_parent().get_node('player')
@@ -41,7 +50,9 @@ func _process(delta):
 	anim_tree.get("parameters/playback")
 	
 	move_and_slide()
-
+	
+func attack():
+	my_global.attack()
+	
 func _target_in_range():
 	return global_position.distance_to(player.global_position) < ATTACK_RANGE
-

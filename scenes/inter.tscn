@@ -1,6 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://cy3mdf1i36lyr"]
+[gd_scene load_steps=8 format=3 uid="uid://cy3mdf1i36lyr"]
 
-[ext_resource type="Texture2D" uid="uid://7nwmxkqbsycn" path="res://material/texture_progress_bar.png" id="1_u26ly"]
+[ext_resource type="FontFile" uid="uid://weq7jofbub36" path="res://material/bebas-neue-bold.ttf" id="1_fn7ft"]
+[ext_resource type="Script" path="res://scripts/inter.gd" id="1_ubuvg"]
+
+[sub_resource type="Theme" id="Theme_ikaeq"]
+default_font = ExtResource("1_fn7ft")
+default_font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_8xg5w"]
+font_size = 75
+font_color = Color(1, 1, 1, 0.443137)
+outline_size = 1
+shadow_size = 11
+shadow_color = Color(0.231373, 0.231373, 0.231373, 0.568627)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ugs8a"]
+font_size = 40
+font_color = Color(1, 0, 0, 0.443137)
+outline_size = 3
+outline_color = Color(1, 0.101961, 0.101961, 1)
+shadow_size = 11
+shadow_color = Color(0.231373, 0.231373, 0.231373, 0.568627)
+
+[sub_resource type="Animation" id="Animation_mlc6x"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0.258824), Color(1, 0, 0, 0.250196), Color(1, 0, 0, 0.241569), Color(1, 0, 0, 0.232941), Color(1, 0, 0, 0.224314), Color(1, 0, 0, 0.215686), Color(1, 0, 0, 0.207059), Color(1, 0, 0, 0.198431), Color(1, 0, 0, 0.189804), Color(1, 0, 0, 0.181176), Color(1, 0, 0, 0.172549), Color(1, 0, 0, 0.163922), Color(1, 0, 0, 0.155294), Color(1, 0, 0, 0.146667), Color(1, 0, 0, 0.138039), Color(1, 0, 0, 0.129412), Color(1, 0, 0, 0.120784), Color(1, 0, 0, 0.112157), Color(1, 0, 0, 0.103529), Color(1, 0, 0, 0.094902), Color(1, 0, 0, 0.0862745), Color(1, 0, 0, 0.0776471), Color(1, 0, 0, 0.0690196), Color(1, 0, 0, 0.0603922), Color(1, 0, 0, 0.0517647), Color(1, 0, 0, 0.0431373), Color(1, 0, 0, 0.0345098), Color(1, 0, 0, 0.0258824), Color(1, 0, 0, 0.0172549), Color(1, 0, 0, 0.00862744), Color(1, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4jgba"]
+_data = {
+"new_animation": SubResource("Animation_mlc6x")
+}
 
 [node name="inter" type="Control"]
 layout_mode = 3
@@ -9,28 +49,78 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ubuvg")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 40.0
+offset_top = -51.0
+offset_right = 60.0
 grow_vertical = 0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_bottom = 50
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ikaeq")
+text = "100 %"
+label_settings = SubResource("LabelSettings_8xg5w")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -199.0
+offset_top = -126.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Label" type="Label" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = SubResource("Theme_ikaeq")
+text = "100 %"
+label_settings = SubResource("LabelSettings_8xg5w")
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -55.0
+offset_top = -126.0
+offset_right = 55.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 50
+
+[node name="Label" type="Label" parent="MarginContainer3"]
 layout_mode = 2
 size_flags_horizontal = 4
-alignment = 1
+theme = SubResource("Theme_ikaeq")
+text = "---"
+label_settings = SubResource("LabelSettings_ugs8a")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0.385)
-layout_mode = 2
-size_flags_horizontal = 4
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 0.258824)
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-max_value = 1000.0
-value = 92.0
-texture_progress = ExtResource("1_u26ly")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+libraries = {
+"": SubResource("AnimationLibrary_4jgba")
+}

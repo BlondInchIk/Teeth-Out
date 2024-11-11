@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpc7nlafdju0o"
 path.s3tc="res://.godot/imported/DunCell_TexturesCom_Pavement_CobblestoneStreet5_2x2_1K_albedo.png-81d0e7177055d637be24547a9dd9afd4.s3tc.ctex"
+path.etc2="res://.godot/imported/DunCell_TexturesCom_Pavement_CobblestoneStreet5_2x2_1K_albedo.png-81d0e7177055d637be24547a9dd9afd4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://scenes/main/DunCell_TexturesCom_Pavement_CobblestoneStreet5_2x2_1K_albedo.png"
-dest_files=["res://.godot/imported/DunCell_TexturesCom_Pavement_CobblestoneStreet5_2x2_1K_albedo.png-81d0e7177055d637be24547a9dd9afd4.s3tc.ctex"]
+dest_files=["res://.godot/imported/DunCell_TexturesCom_Pavement_CobblestoneStreet5_2x2_1K_albedo.png-81d0e7177055d637be24547a9dd9afd4.s3tc.ctex", "res://.godot/imported/DunCell_TexturesCom_Pavement_CobblestoneStreet5_2x2_1K_albedo.png-81d0e7177055d637be24547a9dd9afd4.etc2.ctex"]
 
 [params]
 

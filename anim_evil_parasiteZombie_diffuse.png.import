@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ce07ngfesq4j0"
 path.s3tc="res://.godot/imported/anim_evil_parasiteZombie_diffuse.png-aef507ac8c94281cc404df88c0fc809e.s3tc.ctex"
+path.etc2="res://.godot/imported/anim_evil_parasiteZombie_diffuse.png-aef507ac8c94281cc404df88c0fc809e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://anim_evil_parasiteZombie_diffuse.png"
-dest_files=["res://.godot/imported/anim_evil_parasiteZombie_diffuse.png-aef507ac8c94281cc404df88c0fc809e.s3tc.ctex"]
+dest_files=["res://.godot/imported/anim_evil_parasiteZombie_diffuse.png-aef507ac8c94281cc404df88c0fc809e.s3tc.ctex", "res://.godot/imported/anim_evil_parasiteZombie_diffuse.png-aef507ac8c94281cc404df88c0fc809e.etc2.ctex"]
 
 [params]
 

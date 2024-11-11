@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://f31trcxcy7fk"]
+[gd_scene load_steps=5 format=3 uid="uid://f31trcxcy7fk"]
 
 [ext_resource type="Script" path="res://scripts/control.gd" id="1_3jmjc"]
 [ext_resource type="FontFile" uid="uid://bcxq017m25wgk" path="res://RedHatDisplay-VariableFont_wght.ttf" id="1_14ng2"]
+[ext_resource type="AudioStream" uid="uid://jr3qf5pncoof" path="res://material/menu.mp3" id="3_n0qbn"]
+[ext_resource type="AudioStream" uid="uid://da77d73n1moom" path="res://material/button.mp3" id="4_4rcwr"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -77,8 +79,12 @@ layout_mode = 2
 [node name="settings" type="VBoxContainer" parent="start/HBoxContainer"]
 layout_mode = 2
 
-[node name="HSlider" type="HSlider" parent="start/HBoxContainer/settings"]
-layout_mode = 2
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_n0qbn")
+volume_db = -3.294
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4rcwr")
 
 [connection signal="pressed" from="VBoxContainer2/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer2/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

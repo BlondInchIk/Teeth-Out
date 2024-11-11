@@ -20,7 +20,7 @@ size = Vector3(10, 1, 20)
 material = ExtResource("1_mqo8u")
 
 [node name="player" parent="." instance=ExtResource("3_fg1gc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.713834, 0, 0.594653)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.713834, 0, 5.48195)
 
 [node name="tooth" parent="." instance=ExtResource("3_orw02")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00207, -2.38419e-07, -0.924516)

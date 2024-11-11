@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bioxlcr1c7vbd"
 path.s3tc="res://.godot/imported/normal.tga-61faf43724d6530a03c3edcc54436c9c.s3tc.ctex"
+path.etc2="res://.godot/imported/normal.tga-61faf43724d6530a03c3edcc54436c9c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/Новая папка (2)/pattern_205/normal.tga"
-dest_files=["res://.godot/imported/normal.tga-61faf43724d6530a03c3edcc54436c9c.s3tc.ctex"]
+dest_files=["res://.godot/imported/normal.tga-61faf43724d6530a03c3edcc54436c9c.s3tc.ctex", "res://.godot/imported/normal.tga-61faf43724d6530a03c3edcc54436c9c.etc2.ctex"]
 
 [params]
 

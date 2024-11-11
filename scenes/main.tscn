@@ -1,24 +1,34 @@
 [gd_scene load_steps=9 format=3 uid="uid://dxwqw8kfg4ogx"]
 
-[ext_resource type="Texture2D" uid="uid://dv4y1ky78k03q" path="res://assets/floor/pattern_271/diffuse.tga" id="1_sr613"]
-[ext_resource type="Texture2D" uid="uid://dv6knxdwu266o" path="res://assets/floor/pattern_270/specular.tga" id="2_ikxc4"]
-[ext_resource type="Texture2D" uid="uid://dpc7u3g3ja2fd" path="res://assets/floor/pattern_271/normal.tga" id="3_b7gql"]
-[ext_resource type="Texture2D" uid="uid://ds20dofforla2" path="res://assets/Новая папка (3)/pattern_206/T_206_d.tga" id="4_dkpsc"]
-[ext_resource type="Texture2D" uid="uid://t4p7jgdsjlpi" path="res://assets/Новая папка (3)/pattern_206/T_206_n.tga" id="5_6iuye"]
 [ext_resource type="PackedScene" uid="uid://528sx40tj28h" path="res://scenes/player.tscn" id="6_rqn1y"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fns1m"]
+load_path = "res://.godot/imported/diffuse.tga-8fc4e1d39740f4e97c9e3ad832ae4d62.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3epdg"]
+load_path = "res://.godot/imported/specular.tga-3e46ff65dc88dc93f965e1111ed9461a.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xl4ra"]
+load_path = "res://.godot/imported/normal.tga-ae6351f968cf49f5b7ad494cbc0d0762.s3tc.ctex"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6bbr6"]
-albedo_texture = ExtResource("1_sr613")
+albedo_texture = SubResource("CompressedTexture2D_fns1m")
 normal_enabled = true
-normal_texture = ExtResource("3_b7gql")
-backlight_texture = ExtResource("2_ikxc4")
+normal_texture = SubResource("CompressedTexture2D_xl4ra")
+backlight_texture = SubResource("CompressedTexture2D_3epdg")
 uv1_triplanar = true
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t2vma"]
+load_path = "res://.godot/imported/T_206_d.tga-3a831859ecd1859d147ea59d9659748c.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cmw6p"]
+load_path = "res://.godot/imported/T_206_n.tga-93c64102ed2e840a9b050ac0277ba6f8.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ies5p"]
 albedo_color = Color(0.443137, 0.443137, 0.443137, 1)
-albedo_texture = ExtResource("4_dkpsc")
+albedo_texture = SubResource("CompressedTexture2D_t2vma")
 normal_enabled = true
-normal_texture = ExtResource("5_6iuye")
+normal_texture = SubResource("CompressedTexture2D_cmw6p")
 uv1_triplanar = true
 
 [node name="world" type="Node3D"]

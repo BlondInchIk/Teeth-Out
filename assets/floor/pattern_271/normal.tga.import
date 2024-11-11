@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpc7u3g3ja2fd"
 path.s3tc="res://.godot/imported/normal.tga-ae6351f968cf49f5b7ad494cbc0d0762.s3tc.ctex"
+path.etc2="res://.godot/imported/normal.tga-ae6351f968cf49f5b7ad494cbc0d0762.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/floor/pattern_271/normal.tga"
-dest_files=["res://.godot/imported/normal.tga-ae6351f968cf49f5b7ad494cbc0d0762.s3tc.ctex"]
+dest_files=["res://.godot/imported/normal.tga-ae6351f968cf49f5b7ad494cbc0d0762.s3tc.ctex", "res://.godot/imported/normal.tga-ae6351f968cf49f5b7ad494cbc0d0762.etc2.ctex"]
 
 [params]
 

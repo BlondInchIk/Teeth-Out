@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dv4y1ky78k03q"
 path.s3tc="res://.godot/imported/diffuse.tga-8fc4e1d39740f4e97c9e3ad832ae4d62.s3tc.ctex"
+path.etc2="res://.godot/imported/diffuse.tga-8fc4e1d39740f4e97c9e3ad832ae4d62.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/floor/pattern_271/diffuse.tga"
-dest_files=["res://.godot/imported/diffuse.tga-8fc4e1d39740f4e97c9e3ad832ae4d62.s3tc.ctex"]
+dest_files=["res://.godot/imported/diffuse.tga-8fc4e1d39740f4e97c9e3ad832ae4d62.s3tc.ctex", "res://.godot/imported/diffuse.tga-8fc4e1d39740f4e97c9e3ad832ae4d62.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://m4qifobrakqo"
 path.s3tc="res://.godot/imported/diffus.tga-c03486b3f43aa86285c1cbc6a2eb7328.s3tc.ctex"
+path.etc2="res://.godot/imported/diffus.tga-c03486b3f43aa86285c1cbc6a2eb7328.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/Новая папка (5)/pattern_54/diffus.tga"
-dest_files=["res://.godot/imported/diffus.tga-c03486b3f43aa86285c1cbc6a2eb7328.s3tc.ctex"]
+dest_files=["res://.godot/imported/diffus.tga-c03486b3f43aa86285c1cbc6a2eb7328.s3tc.ctex", "res://.godot/imported/diffus.tga-c03486b3f43aa86285c1cbc6a2eb7328.etc2.ctex"]
 
 [params]
 

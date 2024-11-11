@@ -27,8 +27,6 @@ func _process(delta):
 	if (energy < 2):
 		light_off()
 	
-	print(inter)
-	
 func light_on():
 	spot_light_3d.light_energy = 6
 	spot_light_3d_2.light_energy = 2
@@ -44,5 +42,7 @@ func start():
 		energy -= 1
 	
 func stop():
-	if (energy < max_energy):
+	if (int(max_energy/2)-1 < energy and energy < max_energy):
+		energy += 1
+	elif (0 < energy and energy < max_energy/2):
 		energy += 0.5

@@ -1,54 +1,90 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjx8bb3772q2k"]
+[gd_scene load_steps=11 format=3 uid="uid://cjx8bb3772q2k"]
 
-[ext_resource type="Texture2D" uid="uid://cu43em2npne4l" path="res://assets/Новая папка (2)/pattern_206/diffuse.tga" id="1_8sf61"]
-[ext_resource type="Texture2D" uid="uid://diciga0cublu1" path="res://assets/Новая папка (2)/pattern_206/normal.tga" id="2_yuf2u"]
+[ext_resource type="Script" path="res://scripts/tooth.gd" id="1_vugrf"]
+[ext_resource type="Texture2D" uid="uid://dibg08nhdgmf3" path="res://assets/Новая папка (2)/pattern_205/diffuse.tga" id="2_is213"]
+[ext_resource type="Texture2D" uid="uid://or3isf34pdmq" path="res://material/Новая папка (10)/b6712ef97138_tooth__3d_asset_0_g_roughness.jpg" id="3_ye40j"]
+[ext_resource type="Texture2D" uid="uid://b5tr31sgwffjd" path="res://material/Новая папка (10)/b6712ef97138_tooth__3d_asset_0_g_texture_kd.jpg" id="4_k0ctq"]
+[ext_resource type="ArrayMesh" uid="uid://cm1a24d0bywa6" path="res://material/Новая папка (10)/b6712ef97138_tooth__3d_asset_0_g.obj" id="5_3tylq"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fy5rk"]
+load_path = "res://.godot/imported/normal.tga-9427b317f76c7a994ddd8d23554bc66c.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggpd7"]
 albedo_color = Color(1, 1, 0.952941, 1)
-albedo_texture = ExtResource("1_8sf61")
+albedo_texture = ExtResource("2_is213")
 normal_enabled = true
 normal_scale = -0.72
-normal_texture = ExtResource("2_yuf2u")
+normal_texture = SubResource("CompressedTexture2D_fy5rk")
 uv1_triplanar = true
 
-[node name="tooth" type="Node3D"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_g54n3"]
+radius = 0.341812
 
-[node name="CSGSphere3D2" type="CSGSphere3D" parent="."]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6y1xs"]
+albedo_texture = ExtResource("3_ye40j")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pef6g"]
+albedo_texture = ExtResource("4_k0ctq")
+
+[node name="tooth" type="Node3D"]
+script = ExtResource("1_vugrf")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="Area3D"]
 transform = Transform3D(0.629871, 0, 0, 0, 0.290415, 0, 0, 0, 0.445081, 0, 0.477389, 0)
+visible = false
 radius = 0.330209
 material = SubResource("StandardMaterial3D_ggpd7")
 
-[node name="CSGTorus3D" type="CSGTorus3D" parent="."]
+[node name="CSGTorus3D" type="CSGTorus3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1.20623, 0, 0, 0, 0.752424, 0, 0.492891, 0)
+visible = false
 inner_radius = 0.056
 outer_radius = 0.243
 material = SubResource("StandardMaterial3D_ggpd7")
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Area3D"]
 transform = Transform3D(0.118435, -0.0572798, -0.0139985, 0.0254585, 0.267402, 0, 0.00700317, -0.00338699, 0.236739, -0.0810588, 0.199736, -0.0733846)
+visible = false
 polygon = PackedVector2Array(0, 0, 0, 1, 1.05681, 1.03143, 0.43366, -0.118905)
 depth = 0.2
 material = SubResource("StandardMaterial3D_ggpd7")
 
-[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="."]
+[node name="CSGPolygon3D3" type="CSGPolygon3D" parent="Area3D"]
 transform = Transform3D(-0.125809, 0.0780274, -2.07325e-08, 0.0262679, 0.354476, -0.0537993, -0.00611851, -0.0825674, -0.230969, 0.093073, 0.142346, -0.0357442)
+visible = false
 polygon = PackedVector2Array(0, 0, 0, 1, 1.05681, 1.03143, 0.43366, -0.118905)
 depth = 0.2
 material = SubResource("StandardMaterial3D_ggpd7")
 
-[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="."]
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Area3D"]
 transform = Transform3D(0.124937, -0.0861969, 0.014061, 0.0298373, 0.362088, 0.000321788, -0.00746126, 0.00462752, 0.236735, -0.088243, 0.134144, 0.119045)
+visible = false
 polygon = PackedVector2Array(0, 0, 0, 1, 1.05681, 1.03143, 0.43366, -0.118905)
 depth = 0.2
 material = SubResource("StandardMaterial3D_ggpd7")
 
-[node name="CSGPolygon3D4" type="CSGPolygon3D" parent="."]
+[node name="CSGPolygon3D4" type="CSGPolygon3D" parent="Area3D"]
 transform = Transform3D(-0.115551, 0.0514161, 0.0346234, 0.0250403, 0.242433, 0, -0.0170528, 0.00758789, -0.234611, 0.0987798, 0.235658, 0.056997)
+visible = false
 polygon = PackedVector2Array(0, 0, 0, 1, 1.05681, 1.03143, 0.43366, -0.118905)
 depth = 0.2
 material = SubResource("StandardMaterial3D_ggpd7")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125389, 0)
+[node name="OmniLight3D" type="OmniLight3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121979, 0.676007, 0.00459683)
 light_color = Color(1, 0.14902, 0.156863, 1)
 light_energy = 0.628
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.400935, 0)
+shape = SubResource("SphereShape3D_g54n3")
+
+[node name="B6712Ef97138Tooth3dAsset0G" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.273086, -0.96199, 0, 0.96199, 0.273086, 0, 0, 0, 1, 0, 0.194949, 0)
+material_override = SubResource("StandardMaterial3D_6y1xs")
+material_overlay = SubResource("StandardMaterial3D_pef6g")
+mesh = ExtResource("5_3tylq")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

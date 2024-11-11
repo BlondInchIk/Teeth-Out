@@ -9,12 +9,16 @@ extends CharacterBody3D
 @onready var ray_cast_3d = $RayCast3D
 @onready var camera_3d = $nek/head/eyes/Camera3D
 @onready var check_evil = $nek/head/eyes/Camera3D/check_evil
+@onready var audio_stream_player_3d = $AudioStreamPlayer3D
+@onready var inter = $nek/head/eyes2/Camera3D/light/inter
 
 #Speed vars
 var current_speed = 3.0
 const walking_speed = 3.0
 const sprinting_speed = 5.0
 const crouching_speed = 1.5
+
+var flag = 0
 
 #States
 var walking = false
@@ -59,7 +63,6 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 #Check mouse
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
 
 #Move mouse
 func _input(event):
@@ -150,16 +153,27 @@ func _physics_process(delta):
 	elif crouching:
 		head_bobbing_current_intensity = head_bobbing_crouching_intensity
 		head_bobbing_index += head_bobbing_crouching_speed*delta
-		
+	
 	if is_on_floor() && !sliding && input_dir != Vector2.ZERO:
 		head_bobbing_vector.y = sin(head_bobbing_index)
 		head_bobbing_vector.x = sin(head_bobbing_index/2) + 0.5
-		
+		if head_bobbing_vector.y < 0 and flag == 0:
+			audio_stream_player_3d.pitch_scale = randf_range(.9, 1.01)
+			audio_stream_player_3d.volume_db = randf_range(-25,-20)
+			audio_stream_player_3d.play()
+			flag = 1
+		elif head_bobbing_vector.y > 0:
+			flag = 0
+			
 		eyes.position.y = lerp(eyes.position.y, head_bobbing_vector.y*(head_bobbing_current_intensity/2.0),delta*lerp_speed)
 		eyes.position.x = lerp(eyes.position.x, head_bobbing_vector.x*head_bobbing_current_intensity,delta*lerp_speed)
-		
+	
 	else:
 		
+		if flag == 1:
+			audio_stream_player_3d.stop()
+			flag = 0
+			
 		eyes.position.y = lerp(eyes.position.y, 0.0,delta*lerp_speed)
 		eyes.position.x = lerp(eyes.position.x, 0.0,delta*lerp_speed)
 		
@@ -193,3 +207,17 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, current_speed)
 
 	move_and_slide()
+
+
+func attack_eff():
+	inter.attack_eff()
+
+func _process(delta):
+	if my_global.health == 0:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		get_tree().change_scene_to_file("res://scenes/lose.tscn")
+	if my_global.teeth == my_global.max_teeth:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		get_tree().change_scene_to_file("res://scenes/win.tscn")
